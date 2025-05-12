@@ -1,0 +1,153 @@
+:root {
+    --bleu: #007BFF;
+    --bleu-fonce: #0056b3;
+    --blanc: #ffffff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: var(--blanc);
+    color: #333;
+}
+
+header {
+    background-color: var(--bleu);
+    color: var(--blanc);
+    padding: 40px 20px;
+}
+
+.presentation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.photo-profil {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid var(--blanc);
+    object-fit: cover;
+}
+
+.texte-presentation h1 {
+    margin: 0 0 10px;
+}
+
+.texte-presentation p {
+    margin: 0;
+}
+
+.competences {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.tabs {
+    margin-bottom: 20px;
+}
+
+.tablink {
+    background-color: var(--bleu);
+    color: var(--blanc);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+.tablink.active, .tablink:hover {
+    background-color: var(--bleu-fonce);
+}
+
+.tabcontent ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.projets-grid, .passions-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.projet, .passion {
+    border: 2px solid var(--bleu);
+    border-radius: 10px;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+    background-color: var(--blanc);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.projet:hover, .passion:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.projet img, .passion img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: var(--blanc);
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    text-align: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--bleu-fonce);
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.passions {
+    padding: 30px 20px;
+}
+
+.contact {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.contact a {
+    color: var(--bleu);
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}

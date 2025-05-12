@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="./CSS/PORTFOLIOSTYLE.css">
+</head>
+<body>
+
+<header>
+    <div class="presentation">
+        <img src="images/ma-photo.jpg" alt="Ma photo" class="photo-profil">
+        <div class="texte-presentation">
+            <h1>Bonjour, je suis Ahmed</h1>
+            <p>Étudiant en informatique passionné par la cybersécurité, le développement logiciel et les projets innovants.</p>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="competences">
+        <div class="tabs">
+            <button class="tablink active" onclick="openTab(event, 'softskills')">Soft Skills</button>
+            <button class="tablink" onclick="openTab(event, 'hardskills')">Hard Skills</button>
+            <button class="tablink" onclick="openTab(event, 'projets')">Projets</button>
+        </div>
+
+        <div id="softskills" class="tabcontent" style="display:block;">
+            <ul>
+                <li>Travail en équipe</li>
+                <li>Communication</li>
+                <li>Esprit critique</li>
+            </ul>
+        </div>
+
+        <div id="hardskills" class="tabcontent">
+            <ul>
+                <li>C++, Python, HTML/CSS</li>
+                <li>SQL, Git, Linux</li>
+                <li>Cybersécurité, Réseaux</li>
+            </ul>
+        </div>
+
+        <div id="projets" class="tabcontent">
+            <div class="projets-grid">
+                <div class="projet" onclick="openModal('modal1')">
+                    <img src="images/todo-app.jpg" alt="ToDo App">
+                    <p>Jeu 2D SDL</p>
+                </div>
+                <div class="projet" onclick="openModal('modal2')">
+                    <img src="images/site-asso.jpg" alt="Site Web Association">
+                    <p>Site Web Fictif</p>
+                </div>
+                <div class="projet" onclick="openModal('modal3')">
+                    <img src="images/jeu-2d.jpg" alt="Jeu 2D">
+                    <p>Création d'une base de données</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals pour projets -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h3>Jeu 2D SDL</h3>
+            <p><strong>Durée :</strong> 3 mois</p>
+            <p><strong>Description :</strong> Jeu vidéo codé en C++.</p>
+            <p><strong>Compétences :</strong> C++, algorithmique, structures de données.</p>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h3>Site Web fictif</h3>
+            <p><strong>Durée :</strong> 2 mois</p>
+            <p><strong>Description :</strong> Site vitrine HTML/CSS pour une activité imaginaire.</p>
+            <p><strong>Compétences :</strong> HTML, CSS.</p>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h3>Création d'une base de données</h3>
+            <p><strong>Durée :</strong> 3 mois</p>
+            <p><strong>Description :</strong> Création d'une base de données à partir d'informations recueillies auprès d'une entreprise.</p>
+            <p><strong>Compétences :</strong> SQL,SQLITE,MCD,SR.</p>
+        </div>
+    </div>
+
+    <!-- Passions -->
+    <section class="passions">
+        <h2>Mes passions</h2>
+        <div class="passions-grid">
+            <div class="passion">
+                <img src="img/R.jpg" alt="Cybersécurité">
+                <p>Cybersécurité</p>
+            </div>
+            <div class="passion">
+                <img src="img/db.jpg" alt="Escalade">
+                <p>Boxe Thaïlandaise</p>
+            </div>
+            <div class="passion">
+                <img src="img/OIP.jpg" alt="Photographie">
+                <p>Volley-Ball</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacts -->
+    <section class="contact">
+        <h2>Contact</h2>
+        <p>📧 Email : <a href="mailto:ahmed.ashry0402@gmail.com">ahmed.ashry0402@gmail.com</a></p>
+        <p>💼 LinkedIn : <a href="https://linkedin.com/" target="_blank">linkedin.com</a></p>
+    </section>
+</main>
+
+<script>
+function openTab(evt, tabName) {
+    const tabcontent = document.getElementsByClassName("tabcontent");
+    for (let i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    const tablinks = document.getElementsByClassName("tablink");
+    for (let i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+    }
+
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.classList.add("active");
+}
+
+function openModal(id) {
+    document.getElementById(id).style.display = "flex";
+}
+
+function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+}
+</script>
+
+</body>
+</html>
